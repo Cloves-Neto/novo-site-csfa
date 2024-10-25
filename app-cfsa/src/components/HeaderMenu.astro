@@ -1,0 +1,235 @@
+---
+    import LinkMenu from "./LinkMenu.astro";
+
+---
+
+
+<header id="header">
+    <nav class="nav-top">
+        <ul class="list__nav__top">
+            <LinkMenu 
+                refclass="list__nav__top"
+                href="#" 
+                body="Google Sala de Aula "
+            >
+                <span class="material-symbols-outlined">school</span>
+            </LinkMenu>
+
+            <LinkMenu 
+                    refclass="list__nav__top"
+                    href="#" 
+                    body="Area do Aluno"
+            >       
+                    <span class="material-symbols-outlined">book_4</span>
+            </LinkMenu>
+
+             <LinkMenu 
+                    refclass="list__nav__top"
+                    href="#" 
+                    body="E-mail do Aluno"
+            >
+                    <span class="material-symbols-outlined">mail</span>
+            </LinkMenu>
+
+             <LinkMenu 
+                    refclass="list__nav__top"
+                    href="#" 
+                    body="Acesso Restrito"
+            >
+                    <span class="material-symbols-outlined">cast_for_education</span>
+            </LinkMenu> 
+        </ul>
+
+        <p>
+            <a href="#">Quer conhecer o colégio? Tirar uma dúvida ou qualquer outra informação? Entre em contato conosco!</a>
+        </p>
+    </nav>
+    <nav class="nav-bottom">
+        <div class="logo__container">
+            logo
+
+            <p>
+                Formando Jovens <br> 
+                <strong>transformadores</strong> <br> 
+                da sociedade
+            </p>
+        </div>
+
+        <ul class="list__menu__principal">
+
+            <LinkMenu 
+                refclass="item__menu__principal"
+                href="#" 
+                body="Inicio"
+            ></LinkMenu>
+
+            <LinkMenu refclass="item__menu__principal" href="#" body="O colégio">
+                <ul class="sublist__menu__principal">
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Quem somos"
+                    ></LinkMenu>
+
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Projeto pedagógico"
+                    ></LinkMenu>
+                </ul>
+            </LinkMenu>
+
+            <LinkMenu refclass="item__menu__principal" href="#" body="Segmentos">
+                <ul class="sublist__menu__principal">
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Educação Infantil"
+                    ></LinkMenu>
+
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Ensino Fundamental Anos Iniciais"
+                    ></LinkMenu>
+
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Ensino Fundamental Anos Finais"
+                    ></LinkMenu>
+
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Ensino Médio"
+                    ></LinkMenu>
+
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Poli"
+                    ></LinkMenu>
+                </ul>
+            </LinkMenu>
+
+            <LinkMenu refclass="item__menu__principal" href="#" body="Acontece">
+                <ul class="sublist__menu__principal">
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Notícias"
+                    ></LinkMenu>
+
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="CSFA online"
+                    ></LinkMenu>
+
+                    <LinkMenu 
+                    refclass="subitem__menu__principal"
+                    href="#" 
+                    body="Revista CSFA"
+                    ></LinkMenu>
+                </ul>
+            </LinkMenu>
+
+           
+
+            <!-- <li class="item__menu__principal"><a href="#" class="link__menu__principal">Inicio</a></li>
+            <li class="item__menu__principal">
+                O colégio
+                <ul class="sublist__menu__principal">
+                    <li class="subitem__menu__principal">
+                        <a href="#">Quem somos</a>
+                    </li>
+
+                    <li class="subitem__menu__principal">
+                        <a href="#">Projeto pedagógico</a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class="item__menu__principal">
+                Segmentos
+                <ul class="sublist__menu__principal">
+                    <li class="subitem__menu__principal">
+                        <a href="#">Educação Infantil</a>
+                    </li>
+
+                    <li class="subitem__menu__principal">
+                        <a href="#">Ensino Fundamental Anos Iniciais</a>
+                    </li>
+
+                    <li class="subitem__menu__principal">
+                        <a href="#">Ensino Fundamental Anos Finais</a>
+                    </li>
+
+                    <li class="subitem__menu__principal">
+                        <a href="#">Ensino Médio</a>
+                    </li>
+
+                    <li class="subitem__menu__principal">
+                        <a href="#">Poli</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item__menu__principal">
+                Acontece
+                <ul class="sublist__menu__principal">
+                    <li class="subitem__menu__principal">
+                        <a href="#">Notícias</a>
+                    </li>
+
+                    <li class="subitem__menu__principal">
+                        <a href="#">Revista CSFA</a>
+                    </li>
+
+                    <li class="subitem__menu__principal">
+                        <a href="#">CSFA online</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul> -->
+
+        <div class="container__button">
+            <button type="submit">CSFA Colaborador</button>
+        </div>
+    </nav>
+</header>
+
+<style>
+
+header{
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 50px 100px;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav{
+    width: 95vw;
+    max-width: 1555px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+.nav-top{
+    background-color: rgb(109, 214, 255);
+}
+
+
+    
+</style>
