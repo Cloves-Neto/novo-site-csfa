@@ -1,6 +1,9 @@
 ---
 const {title} = Astro.props;
 import logoImage from '../../public/logo-cfsa.svg';
+import MenuPrincipal from '../components/MenuPrincipal.astro';
+import Footer from '../components/Footer.astro';
+
 ---
 
 <!doctype html>
@@ -15,49 +18,12 @@ import logoImage from '../../public/logo-cfsa.svg';
 		<title>{title}</title>
 	</head>
 	<body>
-		<header class="menu__principal" id="menu__principal">
-			<nav>
-				<figure class="logo__menu__principal">
-					<img src="../../public/logo-cfsa.svg" alt="logo-csfa.svg" title="Logo Colégio São Francisco de Asssis">
-					<figcaption style="display: none;">Logo do colégio são francisco, tons de azul escura com azul laro formato circular com um de pombo centralizado e um texto ao redor com o nome do colégio </figcaption>
-				</figure>
-	
-				<ul class="list__menu__principal">
-					<li class="item__menu__principal">
-						<a class="link__menu__principal" href="https://instagram.com">Inicio</a>
-					</li>
-	
-					<li class="item__menu__principal">
-						<a class="link__menu__principal" href="#">Matrículas</a>
-					</li>
-	
-					<li class="item__menu__principal">
-						O colégio <span class="material-symbols-outlined">keyboard_arrow_down</span>
-					</li>
-	
-					<li class="item__menu__principal">
-						Segmentos <span class="material-symbols-outlined">keyboard_arrow_down</span>
-						
-					</li>
-	
-					<li class="item__menu__principal">
-						Acontece no CSFA <span class="material-symbols-outlined">keyboard_arrow_down</span>
-						
-					</li>
-				</ul>
-	
-				<div class="container__restrict__area">
-					<span>
-						<span class="material-symbols-outlined">lock</span>
-						Área Restrita
-					</span>
-				</div>
-			</nav>
-		</header>
-
+		
+		<MenuPrincipal/>
 		<div class="container">
 			<slot />
 		</div>
+		<Footer/>
 	</body>
 </html>
 
@@ -65,7 +31,9 @@ import logoImage from '../../public/logo-cfsa.svg';
 <style is:global>
 	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 	:root {
+		/* Cores do projeto */
 		--dark-blue:#121B3D;
+		--lowopacity-dark-blue:hsla(227, 54%, 15%, 0.85);
 		--primary-color: #2C3C94;
 		--second-color: #486EDB;
 		--light-cyan: #08B0D1; 
@@ -74,15 +42,30 @@ import logoImage from '../../public/logo-cfsa.svg';
 		--pretty-yellow:#FFC826;
 		--warm-gray:#E0E0E0;
 		--light-gray:#F5F7F5;
-	}
 
-	*{
+		/* Tamanhos de fontes */
+		--font-sm: 12px;
+		--font-smz: 16px;
+		--font-md: 20px;
+		--font-mdz: 24px;
+		--font-lg: 32px;
+		--font-lgz: 48px;
+
+		/* Component - Header Assets */
+		/* 13px - 16px */
+		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+		/* 31px - 49px */
+		--headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+		--bodyFontSize: 1rem;
+		/* 60px - 100px top and bottom */
+		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+	}
+	*, *:before, *:after {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 	}
-
-	html {
+	html {   
 		font-family:  Open Sans, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,'Helvetica Neue', sans-serif;
 		scroll-behavior: smooth;
 	}
@@ -96,85 +79,49 @@ import logoImage from '../../public/logo-cfsa.svg';
 		max-width: 1980px;
 		min-height: 100vh;
 		position: relative;
-}
+	}
+	/* Material Symbol - Google Icon Assets */
 	.material-symbols-outlined {
 	font-variation-settings:
 	'FILL' 1,
 	'wght' 400,
 	'GRAD' 0,
 	'opsz' 24
+	} 
+	
+	.cs-topper {
+		font-size: var(--topperFontSize);
+		line-height: 1.2em;
+		text-transform: uppercase;
+		text-align: inherit;
+		letter-spacing: .1em;
+		font-weight: 700;
+		color: var(--primary);
+		margin-bottom: 0.25rem;
+		display: block;
+	}
+	.cs-title {
+		font-size: var(--headerFontSize);
+		font-weight: 900;
+		line-height: 1.2em;
+		text-align: inherit;
+		max-width: 43.75rem;
+		margin: 0 0 1rem 0;
+		color: var(--headerColor);
+		position: relative;
+	}
+
+	.cs-text {
+		font-size: var(--bodyFontSize);
+		line-height: 1.5em;
+		text-align: inherit;
+		width: 100%;
+		max-width: 40.625rem;
+		margin: 0;
+		color: var(--bodyTextColor);
 	}
 
 
-
-	/* Menu Principal */
-	header{
-		position: absolute;
-		top: 0;
-		left: 0;
-
-		z-index: 100;
-
-		width: 100vw;
-		height: 100px;
-
-		overflow: hidden;
-		
-		background-color: var(--dark-blue);
-	}
-
-	nav{
-		display: grid;
-		grid-template-areas: 
-		"fig list btn"
-		;
-		grid-template-columns: 100px 1fr 150px; 
-		grid-auto-flow: row;
-
-		max-width: 1440px;
-		height: 100%;
-		margin: 0 auto;
-	}
-
-	figure{
-		grid-area: fig;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		img{
-			width: 100%;
-			max-width: 90px;
-		}
-	}
-
-
-	.list__menu__principal{
-		grid-area: list;
-		height: 100%;
-
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		grid-auto-flow: row;
-		list-style: none;
-		place-items: center;
-
-	}
-	.item__menu__principal{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 5px;
-		background-color: aqua;
-	}
-
-	@media only screen and (max-width: 1120px){
-
-
-		.item__menu__principal{
-			display: none;
-		}
-	}
 
 	
 

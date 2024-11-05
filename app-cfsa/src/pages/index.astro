@@ -1,10 +1,29 @@
 ---
+import HeroBanner from '../components/HeroBanner.astro';
+import Segmentos from '../components/Segmentos.astro';
+import Stats from '../components/Stats.astro';
+import Contato from '../components/Contato.astro';
+import SobreColegio from '../components/SobreColegio.astro';
+import Noticias from '../components/Noticias.astro';
+import Parceiros from '../components/Parceiros.astro';
+
+
 import Layout from '../layouts/Layout.astro';
+
+
 ---
 
 <Layout title='CSFA - Inicio'>
-		
+		<HeroBanner/>
+        <Segmentos/>
+        <SobreColegio/>
+        <Stats/>
+        <Noticias/>
+        <Parceiros/>
+        <Contato/>
 </Layout>
+
+<script src="../scripts/menuPrincipalResponsivo.ts"></script>
 
 <style>
 	
