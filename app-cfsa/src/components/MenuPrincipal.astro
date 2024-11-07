@@ -1,5 +1,5 @@
 ---
-
+import Logo from '../../public/logo-cfsa.svg';
 ---
 
 <!-- ============================================ -->
@@ -10,7 +10,7 @@
     <div class="cs-container">
         <!--Nav Logo-->
         <a href="" class="cs-logo" aria-label="back to home">
-            <img src="../../public/logo-cfsa.svg" alt="logo" aria-hidden="true" decoding="async">
+            <img src={Logo.src} alt="logo" aria-hidden="true" decoding="async">
         </a>
         <!--Navigation List-->
         <nav class="cs-nav" role="navigation">
@@ -60,7 +60,7 @@
                             </li>
 
                             <li class="cs-drop-li">
-                              <a href="" class="cs-li-link cs-drop-link">Contato</a>
+                              <a href="/contato" class="cs-li-link cs-drop-link">Contato</a>
                             </li>
                         </ul>
                     </li>
@@ -780,6 +780,6 @@ div.cs-button-group{
 
 }
 
-/* Chrome, Edge and Safari */
+
 
 </style>
