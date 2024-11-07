@@ -116,7 +116,7 @@ import Logo from '../../public/logo-cfsa.svg';
 
         <div class="cs-button-group">
           <!-- Icone drop restrict area -->
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined">  
               lock
             </span>
 
@@ -163,6 +163,9 @@ import Logo from '../../public/logo-cfsa.svg';
 
 </header>
 
+<script src="../scripts/menuPrincipalResponsivo.ts"></script>
+
+
 
 <style>
 
@@ -178,26 +181,24 @@ import Logo from '../../public/logo-cfsa.svg';
     position: relative;
     z-index: 1;
   }
-  body:before {
-    content: '';
-    width: 100%;
-    height: 0%;
-    background: #fff;
-    opacity: 1;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    transition: height .3s;
-  }
+
   body.scroll #cs-navigation {
     width: 100%;
     max-width: 100%;
     top: 0;
+    background-color: #001aff;
   }
   body.scroll #cs-navigation .cs-ul-wrapper {
     top: 100%;
   }
+
+
+
+
+
+
+
+
   body.cs-open {
     overflow: hidden;
   }
